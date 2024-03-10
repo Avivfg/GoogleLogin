@@ -1,16 +1,17 @@
 import React from "react";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
+import "./SignIn.css";
 
 export const SignIn = (props) => {
-    const { setUser } = props;
+  const { setUser } = props;
+  const navigate = useNavigate();
 
   function handleCallbackResponse(response) {
-    console.log("Encoded JWT ID token: " + response.credential);
     var userObject = jwtDecode(response.credential);
-    console.log(userObject);
     setUser(userObject);
-    document.getElementById("signInDiv").hidden = true;
+    navigate("/");
   }
 
   useEffect(() => {
@@ -30,9 +31,11 @@ export const SignIn = (props) => {
   }, []);
 
   return (
-    <div className="App">
-        <h1>Login page</h1>
+    <div className="container">
+    <div className="login-box">
+      <h1>Login options:</h1>
       <div id="signInDiv"></div>
     </div>
+  </div>
   );
 };

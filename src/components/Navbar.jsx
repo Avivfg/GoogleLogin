@@ -35,21 +35,23 @@ export const Navbar = (props) => {
             <li>
               <NavLink to="/contact">Contact</NavLink>
             </li>
-            <li>
-              <img id="userIcon"   
-                src={user.picture} 
-                alt=""
-                style={{
-                  width: '30px', // Adjust the size as needed
-                  height: '30px',
-                  borderRadius: '50%', // This creates a circular shape
-                  objectFit: 'cover', // Ensures the image fills the circle without stretching
-                }} >
-              </img>
-            </li>
-            <li>
-              <NavLink onClick={(e) => handleSignOut(e)} to="/">Sign Out</NavLink>
-            </li>
+            <div className="user-box">
+              <li>
+                <img id="userIcon"   
+                  src={user.picture} 
+                  alt=""
+                  style={{
+                    width: '30px', // Adjust the size as needed
+                    height: '30px',
+                    borderRadius: '50%', // This creates a circular shape
+                    objectFit: 'cover', // Ensures the image fills the circle without stretching
+                  }} >
+                </img>
+              </li>
+              <li>
+                <NavLink style={{background:"#7465655c", fontSize:"small"}} onClick={(e) => handleSignOut(e)} to="/">Sign Out</NavLink>
+              </li>
+            </div>
           </ul>
         </div>
       }
