@@ -13,6 +13,7 @@ nav {
     color: white;
     position: sticky;
     top: 0;
+    padding-right: 10px;
 }
 
 nav .title {
@@ -134,6 +135,7 @@ nav .menu span {
 
     nav ul.open {
         display: flex;
+
     }
 
     nav ul li {
