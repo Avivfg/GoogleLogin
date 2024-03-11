@@ -6,14 +6,10 @@
     height: 100vh;
 }
   
-.login-box {
-display: flex;
-flex-direction: column;
-align-items: center;
-padding: 20px;
-border: 1px solid #ccc;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-max-width: 400px;
-width: 100%;
-text-align: center;
+
+#logout {
+    background: #7465655c;
+    margin: 2px;
+    padding: 9px;
+    font-size: 13px;
 }

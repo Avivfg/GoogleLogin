@@ -36,23 +36,16 @@ export const Navbar = (props) => {
             <li>
               <NavLink to="/contact">Contact</NavLink>
             </li>
-            <li className="login">
+            <li>
               <NavLink to="/user">
-                <img id="userIcon"   
+                <img id="icon"   
                   src={user.picture} 
-                  alt=""
-                  style={{
-                    width: '20px', // Adjust the size as needed
-                    height: '20px',
-                    borderRadius: '50%', // This creates a circular shape
-                    objectFit: 'cover', // Ensures the image fills the circle without stretching
-                    border: '2px solid gold',
-                  }} >
+                  alt="">
                 </img>
               </NavLink>
             </li>
             <li>
-            <NavLink style={{background:"#7465655c", fontSize:"small"}} onClick={(e) => handleSignOut(e)} to="/">Sign Out</NavLink>
+            <NavLink id="logout" onClick={(e) => handleSignOut(e)} to="/">Sign Out</NavLink>
             </li>
           </ul>
         </div>
