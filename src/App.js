@@ -19,7 +19,11 @@ function App() {
     const storedToken = localStorage.getItem("authToken");
     if (storedToken) {
       const decodedUser = jwtDecode(storedToken);
-      setUser(decodedUser);
+      if (decodedUser.exp > Math.floor(Date.now() / 1000)) {
+        setUser(decodedUser);
+      } else {
+        localStorage.removeItem("authToken");
+      }
     }
   }, []);
 
