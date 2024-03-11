@@ -8,6 +8,7 @@ export const Navbar = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   function handleSignOut(event) {
+    localStorage.removeItem("authToken");
     setUser({});
   }
 
@@ -35,17 +36,20 @@ export const Navbar = (props) => {
             <li>
               <NavLink to="/contact">Contact</NavLink>
             </li>
-            <li>
-              <img id="userIcon"   
-                src={user.picture} 
-                alt=""
-                style={{
-                  width: '30px', // Adjust the size as needed
-                  height: '30px',
-                  borderRadius: '50%', // This creates a circular shape
-                  objectFit: 'cover', // Ensures the image fills the circle without stretching
-                }} >
-              </img>
+            <li className="login">
+              <NavLink to="/user">
+                <img id="userIcon"   
+                  src={user.picture} 
+                  alt=""
+                  style={{
+                    width: '20px', // Adjust the size as needed
+                    height: '20px',
+                    borderRadius: '50%', // This creates a circular shape
+                    objectFit: 'cover', // Ensures the image fills the circle without stretching
+                    border: '2px solid gold',
+                  }} >
+                </img>
+              </NavLink>
             </li>
             <li>
             <NavLink style={{background:"#7465655c", fontSize:"small"}} onClick={(e) => handleSignOut(e)} to="/">Sign Out</NavLink>

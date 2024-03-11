@@ -1,0 +1,14 @@
+.user-details-box {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+    text-align: center;
+  }
+  
+  .user-details-box img {
+    width: 100px; /* Adjust the width as needed */
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
